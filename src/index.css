@@ -1,0 +1,27 @@
+* {
+    font: 15px arial, sans-serif;
+}
+
+html, body, div {
+    margin: 0;
+    padding: 0;
+}
+
+.material-icons {
+    font-size: 34px;
+}
+
+.app {
+    margin: 0;
+    padding: 0;
+    width: 502px;
+    height: 585px;
+    border: 1px solid black;
+}
+
+.body {
+    padding: 33px 22px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
