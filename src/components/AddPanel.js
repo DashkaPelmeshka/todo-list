@@ -6,7 +6,7 @@ import './AddPanel.css';
 const AddPanel = () => {
     return (
         <div className="add-panel">
-            <i class="material-icons add-task">
+            <i className="material-icons add-task">
                 add
             </i>
             <input type="text" className="task-to-add" />   
