@@ -1,8 +1,9 @@
 .add-panel {
     width: 100%;
+    display: flex;
 }
 
-.add-task {
+.add-task-icon {
     margin-left: 4,5px;
     margin-right: 10px;
     font-size: 21px;
@@ -10,9 +11,14 @@
     vertical-align: middle;
 }
 
-.task-to-add {
+.task-input {
     width: 411px;
     height: 52px;
     border-radius: 9px;
     border: 2px solid #DFDFDF;
+    float: left;
+}
+
+.task-input:focus, .task-input:active {
+    outline: 0;
 }

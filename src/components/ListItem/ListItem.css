@@ -1,5 +1,6 @@
-.todo-list-item {
+.list-item {
     vertical-align: center;
+    border: none;
 }
 
 .list-item-label {
@@ -14,4 +15,8 @@
 
 .btn:focus, .btn:active {    
     outline: 0;
+}
+
+.list-group-item {
+    border: none;
 }

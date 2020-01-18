@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Header from '../Header/Header';
 import List from '../List';
-import AddPanel from '../AddPanel';
+import ItemAddForm from '../ItemAddForm';
 
 import './App.css';
 
@@ -12,14 +12,7 @@ export default class App extends Component {
   maxId = 8;
 
   state = {
-    items: [
-      { id: 1, label: 'Drink Coffee', done: false },
-      { id: 2, label: 'Learn React', done: false },
-      { id: 3, label: 'Make Awesome App', done: true },
-      { id: 4, label: 'Drink Coffee', done: false },
-      { id: 5, label: 'Learn React', done: false },
-      { id: 6, label: 'Make Awesome App', done: true }
-    ]
+    items: []
   };
 
   onItemAdded = (label) => {
@@ -77,7 +70,7 @@ export default class App extends Component {
           items={ items }
           onToggleDone={this.onToggleDone} />
 
-        <AddPanel
+        <ItemAddForm
           onItemAdded={this.onItemAdded} />
       </div>
     );
