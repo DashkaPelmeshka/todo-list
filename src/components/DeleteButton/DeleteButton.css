@@ -1,0 +1,9 @@
+.delete-button {
+    background-color: transparent;
+    float: right;
+    outline: none;
+}
+
+.delete-button:focus, .delete-button:active {
+    outline: 0;
+}

@@ -5,12 +5,13 @@ import './Header.css';
 
 import DeleleButton from '../DeleteButton/DeleteButton';
 
+const Header = ({ deleteFunction }) => {
+    //deleteFunction();
 
-const Header = () => {
     return (
         <div className="header">
             <h1>TODO list</h1>
-            <DeleleButton />
+            <DeleleButton onClick={ deleteFunction }/>
         </div>
     );
 };

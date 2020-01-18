@@ -5,9 +5,11 @@ import './DeleteButton.css'
 
 const DeleteButton = () => {
     return (
-        <div>
-            
-        </div>
+        <button type="button" className="btn delete-button">
+        <i className="material-icons">
+            delete
+        </i>
+        </button>
     );
 };
 

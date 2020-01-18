@@ -19,9 +19,7 @@ export default class App extends Component {
       { id: 4, label: 'Drink Coffee', done: false },
       { id: 5, label: 'Learn React', done: false },
       { id: 6, label: 'Make Awesome App', done: true }
-    ],
-    filter: 'all',
-    search: ''
+    ]
   };
 
   onItemAdded = (label) => {
@@ -51,23 +49,13 @@ export default class App extends Component {
     });
   };
 
-  onDelete = (id) => {
+  onDelete = (items) => {
+    console.log('TTT');
+
     this.setState((state) => {
-      const idx = state.items.findIndex((item) => item.id === id);
-      const items = [
-        ...state.items.slice(0, idx),
-        ...state.items.slice(idx + 1)
-      ];
+      const items = state.items.filter(item => !item.done);
       return { items };
     });
-  };
-
-  onFilterChange = (filter) => {
-    this.setState({ filter });
-  };
-
-  onSearchChange = (search) => {
-    this.setState({ search });
   };
 
   createItem(label) {
@@ -78,41 +66,16 @@ export default class App extends Component {
     };
   }
 
-  filterItems(items, filter) {
-    if (filter === 'all') {
-      return items;
-    } else if (filter === 'active') {
-      return items.filter((item) => (!item.done));
-    } else if (filter === 'done') {
-      return items.filter((item) => item.done);
-    }
-  }
-
-  searchItems(items, search) {
-    if (search.length === 0) {
-      return items;
-    }
-
-    return items.filter((item) => {
-      return item.label.toLowerCase().indexOf(search.toLowerCase()) > -1;
-    });
-  }
-
   render() {
-    const { items, filter, search } = this.state;
-    const doneCount = items.filter((item) => item.done).length;
-    const toDoCount = items.length - doneCount;
-    const visibleItems = this.searchItems(this.filterItems(items, filter), search);
+    const { items } = this.state;
 
     return (
       <div className="todo-app">
-        <Header toDo={toDoCount} done={doneCount}/>
+        <Header deleteFunction={this.onDelete}/>
 
         <List
-          items={ visibleItems }
-          onToggleDone={this.onToggleDone}
-          onDelete={this.onDelete} />
-
+          items={ items }
+          onToggleDone={this.onToggleDone} />
 
         <AddPanel
           onItemAdded={this.onItemAdded} />
