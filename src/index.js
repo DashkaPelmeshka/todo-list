@@ -1,3 +1,12 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+
+ReactDOM.render(<App />,
+  document.getElementById('root'));
+
+/*
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -5,7 +14,6 @@ import Header from './components/Header';
 import List from './components/List';
 import AddPanel from './components/AddPanel';
 import './index.css'
-
 
 const App = () => {
     const todoData = [
@@ -26,3 +34,4 @@ const App = () => {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+*/

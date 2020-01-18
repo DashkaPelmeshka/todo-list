@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './Trash.css'
+import './DeleteButton.css'
 
 
-const Trash = () => {
+const DeleteButton = () => {
     return (
         <div>
             
@@ -11,4 +11,4 @@ const Trash = () => {
     );
 };
 
-export default Trash;
+export default DeleteButton;

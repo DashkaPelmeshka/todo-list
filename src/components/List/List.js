@@ -1,0 +1,44 @@
+import React from 'react';
+
+import ListItem from '../ListItem/ListItem'
+import './List.css';
+
+
+const List = ({ items, onToggleImportant, onToggleDone, onDelete }) => {
+
+    const elements = items.map((item) => {
+      const { id, ...itemProps } = item;
+      return (
+        <li key={id} className="list-group-item">
+          <ListItem
+            { ...itemProps }
+            onToggleDone={ () => onToggleDone(id) }
+            onDelete={ () => onDelete(id) } />
+        </li>
+      );
+    });
+  
+    return (<ul className="todo-list list-group">{ elements }</ul>);
+};
+
+export default List;
+/*
+const List = ({ list }) => {
+    const items = list.map((item) => {
+        const { id, ...itemProps } = item;
+
+        return (
+        <li key={ id } className="list-group-item">
+            <ListItem { ...itemProps } />
+        </li>);
+    });
+
+    return (
+        <ul className="list-group list">
+            { items }
+        </ul>
+    );
+};
+
+export default List;
+*/
