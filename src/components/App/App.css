@@ -3,13 +3,18 @@
 }
 
 .material-icons {
-    font-size: 34px;
+    font-size: 24px;
 }
 
 .app {
-    margin: 0;
-    padding: 0;
-    width: 502px;
-    height: 585px;
-    border: 1px solid black;
+    width: 338px;
+    min-height: 390px;
+    border: 1px solid #DFDFDF;
+}
+
+.content {
+    padding-left: 13px;
+    padding-top: 20px;
+    position: relative;
+    min-height: 345px;
 }

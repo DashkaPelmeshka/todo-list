@@ -9,7 +9,7 @@ const List = ({ items, onToggleImportant, onToggleDone, onDelete }) => {
     const elements = items.map((item) => {
       const { id, ...itemProps } = item;
       return (
-        <li key={id} className="list-group-item">
+        <li key={id}>
           <ListItem
             { ...itemProps }
             onToggleDone={ () => onToggleDone(id) }
@@ -18,7 +18,7 @@ const List = ({ items, onToggleImportant, onToggleDone, onDelete }) => {
       );
     });
   
-    return (<ul className="todo-list list-group">{ elements }</ul>);
+    return (<ul className="list">{ elements }</ul>);
 };
 
 export default List;

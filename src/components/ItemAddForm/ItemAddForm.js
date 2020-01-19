@@ -20,8 +20,10 @@ export default class ItemAddForm extends Component {
     const stringNoSpaces = label.replace(/ /g, "");
     const noSpaces = stringNoSpaces.length;
 
-    if ((/^\s+$/.test(label)) || (!label) || noSpaces < 3) {
-        alert('Bad string');
+    if ((/^\s+$/.test(label)) || !label) {
+        alert('Please enter non-empty task name');
+    } else if ( noSpaces < 3 ) {
+      alert('Please enter task name longer than 3 symbols');
     } else {
         this.setState({ label: '' });
         const addCallBack = this.props.onItemAdded || (() => {});
@@ -31,7 +33,7 @@ export default class ItemAddForm extends Component {
 
   render() {
     return (
-      <form className="add-panel" onSubmit={this.onSubmit}>
+      <form className="item-add-form" onSubmit={this.onSubmit}>
         <button type="submit" className="btn delete-button">
             <i className="material-icons add-task-icon">
                 add
@@ -45,27 +47,4 @@ export default class ItemAddForm extends Component {
       </form>
     );
   }
-}
-
-/*
-import React from 'react';
-
-import './ItemAddForm.css';
-
-
-const ItemAddForm = () => {
-    return (
-        <div className="add-panel">
-            <button type="button" className="btn delete-button">
-                <i className="material-icons add-task-icon">
-                    add
-                </i>
-            </button>
-            
-            <input type="text" className="task-input" />   
-        </div>
-    );
 };
-
-export default ItemAddForm;
-*/

@@ -12,7 +12,12 @@ export default class App extends Component {
   maxId = 8;
 
   state = {
-    items: []
+    items: [
+      {label: 'yyyyy', done: true, id:1 },
+      {label: 'xxxx', done: false, id:2 },
+      {label: 'xxxx', done: false, id:3 },
+      {label: 'zzzz shjkrej aekrh poijhjk fyjnbfrtyh e;lkjhnmk lkjhbnmkjh ljhnkkjh rjnbvftyuj sejnbvfh lkjhgbnkjhg lkjhnkjhb aekrh poijhjk lkjhgbnkjhg lkjhnkjhb', done: true, id:4 },
+    ]
   };
 
   onItemAdded = (label) => {
@@ -63,15 +68,16 @@ export default class App extends Component {
     const { items } = this.state;
 
     return (
-      <div className="todo-app">
+      <div className="app">
         <Header deleteFunction={this.onDelete}/>
+        <div className="content">
+          <List
+            items={ items }
+            onToggleDone={this.onToggleDone} />
 
-        <List
-          items={ items }
-          onToggleDone={this.onToggleDone} />
-
-        <ItemAddForm
-          onItemAdded={this.onItemAdded} />
+          <ItemAddForm
+            onItemAdded={this.onItemAdded} />   
+        </div>
       </div>
     );
   };

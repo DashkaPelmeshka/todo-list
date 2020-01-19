@@ -2,20 +2,20 @@ import React from 'react';
 
 import './ListItem.css';
 
-const TodoListItem = ({ done, label, onToggleDone }) => {
+const ListItem = ({ done, label, onToggleDone }) => {
     return (
-        <span className='list-item' onClick={onToggleDone}>
-            <button type="button" className="btn">
+        <span onClick={onToggleDone} className="list-item">
+            <button type="button" className="btn item-status-button">
             <i className="material-icons">
                 { done ? 'check_circle_outline' : 'panorama_fish_eye' }
             </i>
             </button>
 
-            <span className="list-item-label">
+            <span className={ (done ? 'text-italic' : null) + " list-item-label" }>
                 {label}
             </span>
         </span>
     );
 };
 
-export default TodoListItem;
+export default ListItem;

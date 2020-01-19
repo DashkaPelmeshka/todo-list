@@ -2,6 +2,9 @@
     background-color: transparent;
     float: right;
     outline: none;
+    border: 16px;
+    margin-right: 3px;
+    margin-top: 9px;
 }
 
 .delete-button:focus, .delete-button:active {

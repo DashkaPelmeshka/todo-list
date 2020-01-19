@@ -1,3 +1,11 @@
 .list {
-    width: 502px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-position: inside;
+    height: 270px;
+    overflow: auto;
 }
