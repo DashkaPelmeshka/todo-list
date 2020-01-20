@@ -9,14 +9,15 @@ import './App.css';
 
 export default class App extends Component {
 
-  maxId = 8;
+  maxId = 10;
 
   state = {
     items: [
-      {label: 'yyyyy', done: true, id:1 },
-      {label: 'xxxx', done: false, id:2 },
-      {label: 'xxxx', done: false, id:3 },
-      {label: 'zzzz shjkrej aekrh poijhjk fyjnbfrtyh e;lkjhnmk lkjhbnmkjh ljhnkkjh rjnbvftyuj sejnbvfh lkjhgbnkjhg lkjhnkjhb aekrh poijhjk lkjhgbnkjhg lkjhnkjhb', done: true, id:4 },
+      {label: 'Покормить собаку', done: false, id: 1 },
+      {label: 'Построить дом', done: false, id: 2 },
+      {label: 'Помыть машину', done: false, id: 3 },
+      {label: 'Купить продукты молоко, соль, сахар, вода, макароны, мясо, моцарелла', done: false, id:4 },
+      {label: 'Составить список', done: true, id: 5 },
     ]
   };
 
@@ -47,11 +48,11 @@ export default class App extends Component {
     });
   };
 
-  onDelete = (items) => {
+  onDelete = () => {
     console.log('TTT');
 
     this.setState((state) => {
-      const items = state.items.filter(item => !item.done);
+      const items = state.items.filter((item) => !item.done);
       return { items };
     });
   };
@@ -69,7 +70,7 @@ export default class App extends Component {
 
     return (
       <div className="app">
-        <Header deleteFunction={this.onDelete}/>
+        <Header onDelete={this.onDelete}/>
         <div className="content">
           <List
             items={ items }
