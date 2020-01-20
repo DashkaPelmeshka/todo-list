@@ -49,8 +49,6 @@ export default class App extends Component {
   };
 
   onDelete = () => {
-    console.log('TTT');
-
     this.setState((state) => {
       const items = state.items.filter((item) => !item.done);
       return { items };
